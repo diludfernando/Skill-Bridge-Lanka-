@@ -8,7 +8,7 @@
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    grid-template-columns: 2fr 1fr;
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
 }
@@ -64,25 +64,7 @@
     transform: translateY(-2px);
 }
 
-.newsletter-form {
-    display: flex;
-    gap: var(--spacing-xs);
-    margin-top: var(--spacing-sm);
-}
 
-.newsletter-form input {
-    flex: 1;
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-md);
-    border: 1px solid #334155;
-    background-color: #1E293B;
-    color: white;
-}
-
-.newsletter-form input:focus {
-    outline: none;
-    border-color: var(--color-accent);
-}
 
 .footer-bottom {
     border-top: 1px solid #1E293B;

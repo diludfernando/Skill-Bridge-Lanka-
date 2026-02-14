@@ -32,24 +32,9 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="footer-col">
-                        <h4 className="footer-title">Resources</h4>
-                        <ul className="footer-links">
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Help Center</a></li>
-                            <li><a href="#">Terms & Privacy</a></li>
-                        </ul>
-                    </div>
 
-                    <div className="footer-col">
-                        <h4 className="footer-title">Stay Updated</h4>
-                        <p className="footer-text">Subscribe to our newsletter for the latest updates and free resources.</p>
-                        <form className="newsletter-form">
-                            <input type="email" placeholder="Enter your email" required />
-                            <button type="submit" className="btn btn-primary">Subscribe</button>
-                        </form>
-                    </div>
+
+
                 </div>
 
                 <div className="footer-bottom">

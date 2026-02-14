@@ -16,8 +16,8 @@ const Features = () => {
     const features = [
         {
             icon: MonitorPlay,
-            title: "Self-Paced Learning",
-            description: "Learn at your own speed with lifetime access to high-quality video courses."
+            title: "Skill Analysis",
+            description: "Students can acuratly analyze their skills and get a clear idea of what they need to improve."
         },
         {
             icon: Award,
