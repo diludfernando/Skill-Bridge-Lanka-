@@ -1,0 +1,62 @@
+import React, { useState, useEffect } from 'react';
+import { Menu, X, ChevronRight } from 'lucide-react';
+import './Navbar.css';
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container navbar-content">
+        <a href="/" className="logo">
+          Skill<span className="text-accent">Bridge</span>
+        </a>
+
+        {/* Desktop Menu */}
+        <div className="desktop-menu">
+          <a href="#features" className="nav-link">Features</a>
+          <a href="#courses" className="nav-link">Courses</a>
+          <a href="#pricing" className="nav-link">Pricing</a>
+          <a href="#about" className="nav-link">About</a>
+        </div>
+
+        <div className="desktop-actions">
+          <a href="/login" className="nav-link">Log in</a>
+          <button className="btn btn-primary">
+            Get Started <ChevronRight size={16} />
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          className="mobile-toggle"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <div className="mobile-menu">
+            <a href="#features" onClick={() => setMobileMenuOpen(false)}>Features</a>
+            <a href="#courses" onClick={() => setMobileMenuOpen(false)}>Courses</a>
+            <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
+            <a href="/login" onClick={() => setMobileMenuOpen(false)}>Log in</a>
+            <button className="btn btn-primary w-full">Get Started</button>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
