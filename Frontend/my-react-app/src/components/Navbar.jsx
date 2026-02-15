@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import './Navbar.css';
 
+import { Link, useLocation } from 'react-router-dom';
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isAssessmentPage = location.pathname === '/assessment';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,14 +19,16 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled || isAssessmentPage ? 'scrolled' : ''}`}>
       <div className="container navbar-content">
-        <a href="/" className="logo">
+        <Link to="/" className="logo">
           Skill<span className="text-accent">Bridge</span>
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="desktop-menu">
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/assessment" className="nav-link">Skill Assessment</Link>
           <a href="#features" className="nav-link">Features</a>
           <a href="#courses" className="nav-link">Courses</a>
           <a href="#pricing" className="nav-link">Pricing</a>
@@ -31,13 +37,15 @@ const Navbar = () => {
 
         <div className="desktop-actions">
           <a href="/login" className="nav-link">Log in</a>
-          <button className="btn btn-primary">
-            Get Started <ChevronRight size={16} />
-          </button>
+          {!isAssessmentPage && (
+            <button className="btn btn-primary">
+              Get Started <ChevronRight size={16} />
+            </button>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="mobile-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -51,7 +59,9 @@ const Navbar = () => {
             <a href="#courses" onClick={() => setMobileMenuOpen(false)}>Courses</a>
             <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
             <a href="/login" onClick={() => setMobileMenuOpen(false)}>Log in</a>
-            <button className="btn btn-primary w-full">Get Started</button>
+            {!isAssessmentPage && (
+              <button className="btn btn-primary w-full">Get Started</button>
+            )}
           </div>
         )}
       </div>

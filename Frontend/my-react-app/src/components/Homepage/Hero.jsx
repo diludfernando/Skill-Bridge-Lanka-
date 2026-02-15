@@ -7,7 +7,7 @@ const Hero = () => {
         <section className="hero">
             <div className="container hero-content">
                 <div className="hero-text">
-                    <span className="badge">New: Data Science Track</span>
+                   
                     <h1 className="hero-title">
                         Master the Skills to <span className="text-highlight">Drive Your Career</span>
                     </h1>
