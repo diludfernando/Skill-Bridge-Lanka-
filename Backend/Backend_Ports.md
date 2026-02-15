@@ -6,10 +6,10 @@
 - IT23166806-Learning-Resource-Suggestions = port 8084
 - IT24102315-Job-Market-Information-Database-and-Progress-Tracking = port 8085
 
-# And make sure to create separate my sql Databases for the each part please
-# make sure to make the sql databases are created outomatically 
+## And make sure to create separate my sql Databases for the each part please
+## make sure to make the sql databases are created outomatically 
 
-# Use this code inside the Aplication properties
+## Use this code inside the Aplication properties
 - spring.application.name=mcq-backend
 - spring.datasource.url=jdbc:mysql://localhost:3306/mcq_db?createDatabaseIfNotExist=true
 - spring.datasource.username= use the own name in the mysql that you used
