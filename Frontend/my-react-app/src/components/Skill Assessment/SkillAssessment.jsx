@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './SkillAssessment.css';
 import { CheckCircle, XCircle, AlertCircle, RotateCcw } from 'lucide-react';
 

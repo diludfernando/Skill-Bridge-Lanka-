@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isAssessmentPage = location.pathname === '/assessment';
+  const isAssessmentPage = location.pathname.startsWith('/assessment');
 
   useEffect(() => {
     const handleScroll = () => {
